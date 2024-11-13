@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Dog Search</title>
+                        <link rel="stylesheet" href="./css/style.css">
+                        <link rel="preconnect" href="https://fonts.googleapis.com">
+                        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+                        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=check_circle" />
+                    </head>
+                    <body>
+                        <div id="wrapper">
+                            <section id="top" class="move-down top-styles">
+                                <article class="intro-text">
+                                <h1>Dog Search<img class="pets-logo" src="./img/pets_logo.png"></h1>
+                                <p>Fast & Easy Breed Discovery</p>
+                                </article>
+                                <div class="search-container">
+                                    <input type="text"  class="dog-selector" id="dog-list" autocomplete="off" placeholder="Search for dogbreed...">
+                                    <button id="select-dog" onclick="fetchDogbreedpicture(event)"><span class="material-symbols-outlined">
+                                        check_circle
+                                        </span></button>
+                                    <div id="suggestions" class="suggestions-dropdown"></div>
+                                </div>
+                                <select id="dog-breeds" style="display: none;" >
+                                    <option value="start" selected>--Select a dog--</option>
+                                    <option data-number="1" value="affenpinscher" >affenpinscher</option>
+                                    <option data-number="3" value="african">african</option>
+                                    <option data-number="4" value="airedale">airedale</option>
+                                    <option data-number="6" value="akita">akita</option>
+                                    <option data-number="19" value="appenzeller">appenzeller</option>
+                                    <option data-number="22" value="australian/kelpie">kelpie australian</option>
+                                    <option data-number="23" value="australian/shepherd">shepherd australian</option>
+                                    <option data-number="" value="bakharwal/indian">indian bakharwal</option>
+                                    <option data-number="28" value="basenji">basenji</option>
+                                    <option data-number="31" value="beagle">beagle</option>
+                                    <option data-number="47" value="bluetick">bluetick</option>
+                                    <option data-number="" value="borzoi">borzoi</option>
+                                    <option data-number="54" value="bouvier">bouvier</option>
+                                    <option data-number="55" value="boxer">boxer</option>
+                                    <option data-number="" value="brabancon">brabancon</option>
+                                    <option data-number="58" value="briard">briard</option>
+                                    <option data-number="" value="buhund/norwegian">norwegian buhund</option>
+                                    <option data-number="" value="bulldog/boston">boston bulldog</option>
+                                    <option data-number="179" value="bulldog/english">english bulldog</option>
+                                    <option data-number="113" value="bulldog/french">french bulldog</option>
+                                    <option data-number="16" value="bullterrier/staffordshire">staffordshire bullterrier</option>
+                                    <option data-number="21" value="cattledog/australian">australian cattledog</option>
+                                    <option data-number="" value="cavapoo">cavapoo</option>
+                                    <option data-number="" value="chihuahua">chihuahua</option>
+                                    <option data-number="" value="chippiparai/indian">indian chippiparai</option>
+                                    <option data-number="81" value="chow">chow</option>
+                                    <option data-number="84" value="clumber">clumber</option>
+                                    <option data-number="" value="cockapoo">cockapoo</option>
+                                    <option data-number="50" value="collie/border">border collie</option>
+                                    <option data-number="208" value="coonhound">coonhound</option>
+                                    <option data-number="68" value="corgi/cardigan">cardigan corgi</option>
+                                    <option data-number="" value="cotondetulear">cotondetulear</option>
+                                    <option data-number="" value="dachshund">dachshund</option>
+                                    <option data-number="92" value="dalmatian">dalmatian</option>
+                                    <option data-number="124" value="dane/great">great dane</option>
+                                    <option data-number="" value="danish/swedish">swedish danish</option>
+                                    <option data-number="218" value="deerhound/scottish">scottish deerhound</option>
+                                    <option data-number="" value="dhole">dhole</option>
+                                    <option data-number="" value="dingo">dingo</option>
+                                    <option data-number="94" value="doberman">doberman</option>
+                                    <option data-number="" value="elkhound/norwegian">norwegian elkhound</option>
+                                    <option data-number="" value="entlebucher">entlebucher</option>
+                                    <option data-number="12" value="eskimo">eskimo</option>
+                                    <option data-number="" value="finnish/lapphund">lapphund finnish</option>
+                                    <option data-number="42" value="frise/bichon">bichon frise</option>
+                                    <option data-number="" value="gaddi/indian">indian gaddi</option>
+                                    <option data-number="115" value="germanshepherd">german shepherd</option>
+                                    <option data-number="127" value="greyhound/indian">indian greyhound</option>
+                                    <option data-number="138" value="greyhound/italian">italian greyhound</option>
+                                    <option data-number="" value="groenendael">groenendael</option>
+                                    <option data-number="130" value="havanese">havanese</option>
+                                    <option data-number="2" value="hound/afghan">afghan hound</option>
+                                    <option data-number="30" value="hound/basset">basset hound</option>
+                                    <option data-number="" value="hound/blood">blood hound</option>
+                                    <option data-number="" value="hound/english">english hound</option>
+                                    <option data-number="" value="hound/ibizan">ibizan hound</option>
+                                    <option data-number="" value="hound/plott">plott hound</option>
+                                    <option data-number="" value="hound/walker">walker hound</option>
+                                    <option data-number="8" value="husky">husky</option>
+                                    <option data-number="142" value="keeshond">keeshond</option>
+                                    <option data-number="22" value="kelpie">kelpie</option>
+                                    <option data-number="" value="kombai">kombai</option>
+                                    <option data-number="144" value="komondor">komondor</option>
+                                    <option data-number="147" value="kuvasz">kuvasz</option>
+                                    <option data-number="" value="labradoodle">labradoodle</option>
+                                    <option data-number="149" value="labrador">labrador</option>
+                                    <option data-number="155" value="leonberg">leonberg</option>
+                                    <option data-number="156" value="lhasa">lhasa</option>
+                                    <option data-number="9" value="malamute">malamute</option>
+                                    <option data-number="36" value="malinois">malinois</option>
+                                    <option data-number="161" value="maltese">maltese</option>
+                                    <option data-number="244" value="mastiff/bull">bull mastiff</option>
+                                    <option data-number="244" value="mastiff/english">english mastiff</option>
+                                    <option data-number="244" value="mastiff/indian">indian mastiff</option>
+                                    <option data-number="244" value="mastiff/tibetan">tibetan mastiff</option>
+                                    <option data-number="" value="mexicanhairless">mexicanhairless</option>
+                                    <option data-number="" value="mix">mix</option>
+                                    <option data-number="41" value="mountain/bernese">bernese mountain</option>
+                                    <option data-number="" value="mountain/swiss">swiss mountain</option>
+                                    <option data-number="" value="mudhol/indian">indian mudhol</option>
+                                    <option data-number="171" value="newfoundland">newfoundland</option>
+                                    <option data-number="" value="otterhound">otterhound</option>
+                                    <option data-number="70" value="ovcharka/caucasian">caucasian ovcharka</option>
+                                    <option data-number="181" value="papillon">papillon</option>
+                                    <option data-number="" value="pariah/indian">indian pariah</option>
+                                    <option data-number="" value="pekinese">pekinese</option>
+                                    <option data-number="184" value="pembroke">pembroke</option>
+                                    <option data-number="167" value="pinscher/miniature">miniature pinscher</option>
+                                    <option data-number="15" value="pitbull">pitbull terrier</option>
+                                    <option data-number="116" value="pointer/german">german pointer</option>
+                                    <option data-number="" value="pointer/germanlonghair">germanlonghair pointer</option>
+                                    <option data-number="193" value="pomeranian">pomeranian</option>
+                                    <option data-number="" value="poodle/medium">medium poodle</option>
+                                    <option data-number="196" value="poodle/miniature">miniature poodle</option>
+                                    <option data-number="" value="poodle/standard">standard poodle</option>
+                                    <option data-number="197" value="poodle/toy">toy poodle</option>
+                                    <option data-number="201" value="pug">pug</option>
+                                    <option data-number="" value="puggle">puggle</option>
+                                    <option data-number="125" value="pyrenees">pyrenees</option>
+                                    <option data-number="" value="rajapalayam/indian">indian rajapalayam</option>
+                                    <option data-number="208" value="redbone">redbone</option>
+                                    <option data-number="76" value="retriever/chesapeake">chesapeake retriever</option>
+                                    <option data-number="" value="retriever/curly">curly retriever</option>
+                                    <option data-number="" value="retriever/flatcoated">flatcoated retriever</option>
+                                    <option data-number="121" value="retriever/golden">golden retriever</option>
+                                    <option data-number="209" value="ridgeback/rhodesian">rhodesian ridgeback</option>
+                                    <option data-number="210" value="rottweiler">rottweiler</option>
+                                    <option data-number="213" value="saluki">saluki</option>
+                                    <option data-number="214" value="samoyed">samoyed</option>
+                                    <option data-number="216" value="schipperke">schipperke</option>
+                                    <option data-number="119" value="schnauzer/giant">giant schnauzer</option>
+                                    <option data-number="168" value="schnauzer/miniature">miniature schnauzer</option>
+                                    <option data-number="" value="segugio/italian">italian segugio</option>
+                                    <option data-number="101" value="setter/english">english setter</option>
+                                    <option data-number="123" value="setter/gordon">gordon setter</option>
+                                    <option data-number="134" value="setter/irish">irish setter</option>
+                                    <option data-number="" value="sharpei">sharpei</option>
+                                    <option data-number="178" value="sheepdog/english">english sheepdog</option>
+                                    <option data-number="" value="sheepdog/indian">indian sheepdog</option>
+                                    <option data-number="221" value="sheepdog/shetland">shetland sheepdog</option>
+                                    <option data-number="222" value="shiba">shiba</option>
+                                    <option data-number="" value="shihtzu">shihtzu</option>
+                                    <option data-number="" value="spaniel/blenheim">blenheim spaniel</option>
+                                    <option data-number="" value="spaniel/brittany">brittany spaniel</option>
+                                    <option data-number="86" value="spaniel/cocker">cocker spaniel</option>
+                                    <option data-number="" value="spaniel/irish">irish spaniel</option>
+                                    <option data-number="" value="spaniel/japanese">japanese spaniel</option>
+                                    <option data-number="" value="spaniel/sussex">sussex spaniel</option>
+                                    <option data-number="" value="spaniel/welsh">welsh spaniel</option>
+                                    <option data-number="" value="spitz/indian">indian spitz</option>
+                                    <option data-number="141" value="spitz/japanese">japanese spitz</option>
+                                    <option data-number="103" value="springer/english">english springer</option>
+                                    <option data-number="" value="stbernard">stbernard</option>
+                                    <option data-number="" value="terrier/american">american terrier</option>
+                                    <option data-number="24" value="terrier/australian">australian terrier</option>
+                                    <option data-number="34" value="terrier/bedlington">bedlington terrier</option>
+                                    <option data-number="51" value="terrier/border">border terrier</option>
+                                    <option data-number="65" value="terrier/cairn">cairn terrier</option>
+                                    <option data-number="" value="terrier/dandie">dandie terrier</option>
+                                    <option data-number="232" value="terrier/fox">fox terrier</option>
+                                    <option data-number="135" value="terrier/irish">irish terrier</option>
+                                    <option data-number="" value="terrier/kerryblue">kerryblue terrier</option>
+                                    <option data-number="" value="terrier/lakeland">lakeland terrier</option>
+                                    <option data-number="172" value="terrier/norfolk">norfolk terrier</option>
+                                    <option data-number="176" value="terrier/norwich">norwich terrier</option>
+                                    <option data-number="" value="terrier/patterdale">patterdale terrier</option>
+                                    <option data-number="" value="terrier/russell">russell terrier</option>
+                                    <option data-number="219" value="terrier/scottish">scottish terrier</option>
+                                    <option data-number="" value="terrier/sealyham">sealyham terrier</option>
+                                    <option data-number="228" value="terrier/silky">silky terrier</option>
+                                    <option data-number="246" value="terrier/tibetan">tibetan terrier</option>
+                                    <option data-number="105" value="terrier/toy">toy terrier</option>
+                                    <option data-number="" value="terrier/welsh">welsh terrier</option>
+                                    <option data-number="" value="terrier/westhighland">westhighland terrier</option>
+                                    <option data-number="233" value="terrier/wheaten">wheaten terrier</option>
+                                    <option data-number="264" value="terrier/yorkshire">yorkshire terrier</option>
+                                    <option data-number="38" value="tervuren">tervuren</option>
+                                    <option data-number="251" value="vizsla">vizsla</option>
+                                    <option data-number="" value="waterdog/spanish">spanish waterdog</option>
+                                    <option data-number="253" value="weimaraner">weimaraner</option>
+                                    <option data-number="137" value="wolfhound/irish">irish wolfhound</option>
+                                    <option data-number="257" value="whippet">whippet</option>
+                                </select>
+                                <button id="Random" class="Random-top" onclick="fetchRandomdog(event)">Random dog</button>
+                            </section>
+                        </div>
+                        <script src="./js/main.js"></script>
+                    </body>
+                    </html>   
